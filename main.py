@@ -174,4 +174,111 @@
 
 #Queue
 
+# class Car:
+#     def __init__(self, make, color, plate_number):
+#         self.make = make
+#         self.color = color
+#         self.plate_number = plate_number
+#
+# class Node:
+#     def __init__(self, car):
+#         self.car = car
+#         self.next = None
+#
+# class Queue:
+#     def __init__(self):
+#         self.front = None
+#         self.rear = None
+#         self.size = 0
+#
+#     def enqueue(self, item):  #https://www.geeksforgeeks.org/queue-linked-list-implementation/
+#         temp = Node(item)
+#
+#         if self.rear is None:
+#             self.front = self.rear = temp
+#             self.size += 1 #krmel lnext
+#             return
+#         self.rear.next = temp
+#         self.rear = temp
+#         self.size += 1
+#
+#     def dequeue(self):
+#         if self.isEmpty():
+#             return None
+#         temp = self.front
+#         self.front = temp.next
+#         self.size -= 1 #lnshel lnext w nrj3 ltail
+#         if self.front is None:
+#             self.rear = None
+#         return temp.car
+#
+#     def get_size(self):
+#         return self.size
+#
+#     def isEmpty(self):
+#         return self.size == "0"
+#
+#     def front(self):
+#         if not self.isEmpty():
+#             return self.front.car
+#         else:
+#             return None
+#
+# c1 = Queue()
+#
+# while True:
+#     print("\nCar Wash Menu:")
+#     print("1. Add a car to the queue")
+#     print("2. Finish washing a car")
+#     print("3. How many in line")
+#     print("4. Who is next")
+#     print("5. Exit")
+#
+#     choice = input("Enter your choice: ")
+#
+#     if choice == "1":
+#         make = input("Enter car make: ")
+#         color = input("Enter car color: ")
+#         plate_number = input("Enter car plate number: ")
+#         car = Car(make, color, plate_number)
+#         c1.enqueue(car)
+#         print("Car added to the queue.")
+#
+#     elif choice == "2":
+#         if not c1.isEmpty():
+#             car = c1.dequeue()
+#             print("Make: ", car.make)
+#             print("Color: ", car.color)
+#             print("Plate Number: ", car.plate_number)
+#         else:
+#             print("No cars in washing.")
+#
+#     elif choice =="3":
+#         print(c1.get_size())
+#
+#     elif choice == "4":  #ma bda tzbt
+#         next_car = c1.front()
+#         if next_car:
+#             print("Next car: ", next_car.make)
+#         else:
+#             print("No cars in line.")
+#
+#     elif choice == "5":
+#         break
+#
+#     else:
+#         print("Invalid Input.")
+
+#Stack
+class Stack:
+    def __init__(self):
+        self.elements = []
+
+    def push(self, item):
+        self.elements.append(item)
+
+    def pop(self):
+        if len(self.elements) == 0:
+            return None
+        return self.elements.pop()
 
