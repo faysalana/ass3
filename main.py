@@ -282,3 +282,23 @@ class Stack:
             return None
         return self.elements.pop()
 
+    def decode_message(self, message):
+        decoded_message = []
+
+        for char in message:
+            if ('a' <= char <= 'z' or 'A' <= char <= 'Z' or char == ' '): # i searched for things like isdigit bs ma la2et fa 3mlta manually
+                self.push(char)
+            elif char == '*':
+                popped_char = self.pop()
+                if popped_char is not None:
+                    decoded_message.append(popped_char)
+
+        # Pop any remaining characters in the stack
+        while self.elements:
+            decoded_message.append(self.pop())
+
+        return ''.join(decoded_message)
+
+s = Stack()
+print(s.decode_message("SIVLE ****** DAED TNSI ***"))
+#allah satar w fhmto lal so2al law ma hk ma knt 3rft 7ello :)
